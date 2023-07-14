@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="31301" started-at="2023-07-14T07:02:08Z" finished-at="2023-07-14T07:02:40Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="31301" started-at="2023-07-14T07:02:08Z" finished-at="2023-07-14T07:02:40Z">
+      <class name="EriBankTest">
+        <test-method status="PASS" signature="launchEriBank()[pri:0, instance:EriBankTest@11dc3715]" name="launchEriBank" is-config="true" duration-ms="18370" started-at="2023-07-14T07:01:50Z" finished-at="2023-07-14T07:02:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchEriBank -->
+        <test-method status="PASS" signature="loginToEriBank()[pri:0, instance:EriBankTest@11dc3715]" name="loginToEriBank" duration-ms="13075" started-at="2023-07-14T07:02:08Z" finished-at="2023-07-14T07:02:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToEriBank -->
+        <test-method status="PASS" signature="makePayment()[pri:1, instance:EriBankTest@11dc3715]" name="makePayment" duration-ms="18172" started-at="2023-07-14T07:02:21Z" finished-at="2023-07-14T07:02:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- makePayment -->
+      </class> <!-- EriBankTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
