@@ -64,23 +64,45 @@ public class EriBankTest extends BasePage{
 	@Test(priority = 1)
 	public void makePayment() throws InterruptedException {
 		
-		driver.findElement(By.id("com.experitest.ExperiBank:id/makePaymentButton")).click();
+		eriBank = new EriBankPage(driver);
+		Thread.sleep(5000);
+		
+		eriBank.clickOnMakePayment();
 		Thread.sleep(2000);
-		driver.findElement(By.id("com.experitest.ExperiBank:id/phoneTextField")).sendKeys("123456789");
-		driver.findElement(By.id("com.experitest.ExperiBank:id/nameTextField")).sendKeys("Srinivas");
-		driver.findElement(By.id("com.experitest.ExperiBank:id/amountTextField")).sendKeys("1000");
+		eriBank.enterPhone();
+		eriBank.enterName();
+		eriBank.enterAmount();
+		eriBank.clickOnCountryButton();
 		Thread.sleep(2000);
-		driver.findElement(By.id("com.experitest.ExperiBank:id/countryButton")).click();
+		eriBank.clickOnCountry();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@text='USA']")).click();
+		eriBank.clickOnSendPayment();
 		Thread.sleep(2000);
-		driver.findElement(By.id("com.experitest.ExperiBank:id/sendPaymentButton")).click();
+		eriBank.clickOnYes();
 		Thread.sleep(2000);
-		driver.findElement(By.id("android:id/button1")).click();
-		Thread.sleep(2000);
-		String checkBalance = driver.findElement(By.xpath("//*[contains(@text,'Your balance is:')]")).getText();
-	    System.out.println(checkBalance);
-	    Assert.assertTrue(checkBalance.contains("Your balance is:"));
+		eriBank.verifyBalance();
+		
+		
+		/*
+		 * driver.findElement(By.id("com.experitest.ExperiBank:id/makePaymentButton")).
+		 * click(); Thread.sleep(2000);
+		 * driver.findElement(By.id("com.experitest.ExperiBank:id/phoneTextField")).
+		 * sendKeys("123456789");
+		 * driver.findElement(By.id("com.experitest.ExperiBank:id/nameTextField")).
+		 * sendKeys("Srinivas");
+		 * driver.findElement(By.id("com.experitest.ExperiBank:id/amountTextField")).
+		 * sendKeys("1000"); Thread.sleep(2000);
+		 * driver.findElement(By.id("com.experitest.ExperiBank:id/countryButton")).click
+		 * (); Thread.sleep(2000);
+		 * driver.findElement(By.xpath("//*[@text='USA']")).click(); Thread.sleep(2000);
+		 * driver.findElement(By.id("com.experitest.ExperiBank:id/sendPaymentButton")).
+		 * click(); Thread.sleep(2000);
+		 * driver.findElement(By.id("android:id/button1")).click(); Thread.sleep(2000);
+		 * String checkBalance =
+		 * driver.findElement(By.xpath("//*[contains(@text,'Your balance is:')]")).
+		 * getText(); System.out.println(checkBalance);
+		 * Assert.assertTrue(checkBalance.contains("Your balance is:"));
+		 */
 		
 		
 	

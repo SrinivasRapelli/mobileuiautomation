@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="31301" started-at="2023-07-14T07:02:08Z" finished-at="2023-07-14T07:02:40Z">
+  <suite started-at="2023-07-14T10:09:24Z" name="Default suite" finished-at="2023-07-14T10:09:57Z" duration-ms="32392">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="31301" started-at="2023-07-14T07:02:08Z" finished-at="2023-07-14T07:02:40Z">
+    <test started-at="2023-07-14T10:09:24Z" name="Default test" finished-at="2023-07-14T10:09:57Z" duration-ms="32392">
       <class name="EriBankTest">
-        <test-method status="PASS" signature="launchEriBank()[pri:0, instance:EriBankTest@11dc3715]" name="launchEriBank" is-config="true" duration-ms="18370" started-at="2023-07-14T07:01:50Z" finished-at="2023-07-14T07:02:08Z">
+        <test-method is-config="true" signature="launchEriBank()[pri:0, instance:EriBankTest@2f67b837]" started-at="2023-07-14T10:09:08Z" name="launchEriBank" finished-at="2023-07-14T10:09:24Z" duration-ms="15682" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchEriBank -->
-        <test-method status="PASS" signature="loginToEriBank()[pri:0, instance:EriBankTest@11dc3715]" name="loginToEriBank" duration-ms="13075" started-at="2023-07-14T07:02:08Z" finished-at="2023-07-14T07:02:21Z">
+        <test-method signature="loginToEriBank()[pri:0, instance:EriBankTest@2f67b837]" started-at="2023-07-14T10:09:24Z" name="loginToEriBank" finished-at="2023-07-14T10:09:36Z" duration-ms="12124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToEriBank -->
-        <test-method status="PASS" signature="makePayment()[pri:1, instance:EriBankTest@11dc3715]" name="makePayment" duration-ms="18172" started-at="2023-07-14T07:02:21Z" finished-at="2023-07-14T07:02:40Z">
+        <test-method signature="makePayment()[pri:1, instance:EriBankTest@2f67b837]" started-at="2023-07-14T10:09:36Z" name="makePayment" finished-at="2023-07-14T10:09:57Z" duration-ms="20241" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- makePayment -->
