@@ -19,7 +19,7 @@ public class EriBankTest extends BasePage{
 		
 		eriBank = new EriBankPage(driver);
 		
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		eriBank.enterUserName();
 		eriBank.enterPassword();
 		eriBank.clickOnLoginButton();
@@ -65,8 +65,8 @@ public class EriBankTest extends BasePage{
 	public void makePayment() throws InterruptedException {
 		
 		eriBank = new EriBankPage(driver);
-		Thread.sleep(5000);
-		
+		Thread.sleep(3000);
+	
 		eriBank.clickOnMakePayment();
 		Thread.sleep(2000);
 		eriBank.enterPhone();
@@ -81,6 +81,8 @@ public class EriBankTest extends BasePage{
 		eriBank.clickOnYes();
 		Thread.sleep(2000);
 		eriBank.verifyBalance();
+		eriBank.clickOnLogoutButton();
+		
 		
 		
 		/*
@@ -108,36 +110,75 @@ public class EriBankTest extends BasePage{
 	
 	}
 	
-	//@Test(priority = 1)
+	@Test(priority = 2)
 	public void mortgageRequest() throws InterruptedException {
+	
+		eriBank = new EriBankPage(driver);
+		loginToEriBank();
 		
-		driver.findElement(By.id("com.experitest.ExperiBank:id/mortageRequestButton")).click();
+		Thread.sleep(5000);
+		eriBank.clickOnMortageButton();
 		Thread.sleep(3000);
-		driver.findElement(By.id("com.experitest.ExperiBank:id/nameTextField")).sendKeys("srinivas");
-		driver.findElement(By.id("com.experitest.ExperiBank:id/lastNameTextField")).sendKeys("rapelli");
-		driver.findElement(By.id("com.experitest.ExperiBank:id/ageTextField")).sendKeys("23");
-		driver.findElement(By.id("com.experitest.ExperiBank:id/addressOneTextField")).sendKeys("hyderabad");
-		driver.findElement(By.id("com.experitest.ExperiBank:id/addressTwoTextField")).sendKeys("telangana");
-		Thread.sleep(2000);
-		driver.findElement(By.id("com.experitest.ExperiBank:id/countryButton")).click();
+		eriBank.enterFirstName();
+		eriBank.enterLastName();
+		eriBank.enterAge();
+		eriBank.enterAddress1();
+		eriBank.enterAddress2();
+		eriBank.clickOnCountryButton1();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//*[@text='Italy']")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.id("com.experitest.ExperiBank:id/nextButton")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//*[@text='Car']")).click();
-		driver.findElement(By.xpath("//*[@text='2']")).click();
+		eriBank.clickOnCountry1();
+		Thread.sleep(3000);
+		eriBank.clickOnNextButton();
+		Thread.sleep(3000);
+		eriBank.clickOnCar();
+		eriBank.clickOnNumberOfYears();
 		
 		scrollDown();
 		
+		Thread.sleep(3000);
+		eriBank.clickOnPrivateJob();
 		
-		driver.findElement(By.xpath("//*[@text='Private Job']")).click();
-		driver.findElement(By.xpath("//*[@text='10,00,000']")).click();
- 
 		scrollDown();
 		
-		driver.findElement(By.xpath("//*[@text='Save']")).click();
-		Thread.sleep(2000);		
+		eriBank.clickOnPrice();
+		Thread.sleep(3000);
+		eriBank.clickOnSave();
+		
+		
+		
+
+		/*
+		 * driver.findElement(By.id("com.experitest.ExperiBank:id/mortageRequestButton")
+		 * ).click(); Thread.sleep(3000);
+		 * driver.findElement(By.id("com.experitest.ExperiBank:id/nameTextField")).
+		 * sendKeys("srinivas");
+		 * driver.findElement(By.id("com.experitest.ExperiBank:id/lastNameTextField")).
+		 * sendKeys("rapelli");
+		 * driver.findElement(By.id("com.experitest.ExperiBank:id/ageTextField")).
+		 * sendKeys("23");
+		 * driver.findElement(By.id("com.experitest.ExperiBank:id/addressOneTextField"))
+		 * .sendKeys("hyderabad");
+		 * driver.findElement(By.id("com.experitest.ExperiBank:id/addressTwoTextField"))
+		 * .sendKeys("telangana"); Thread.sleep(2000);
+		 * driver.findElement(By.id("com.experitest.ExperiBank:id/countryButton")).click
+		 * (); Thread.sleep(3000);
+		 * driver.findElement(By.xpath("//*[@text='Italy']")).click();
+		 * Thread.sleep(2000);
+		 * driver.findElement(By.id("com.experitest.ExperiBank:id/nextButton")).click();
+		 * Thread.sleep(2000); driver.findElement(By.xpath("//*[@text='Car']")).click();
+		 * driver.findElement(By.xpath("//*[@text='2']")).click();
+		 * 
+		 * scrollDown();
+		 * 
+		 * 
+		 * driver.findElement(By.xpath("//*[@text='Private Job']")).click();
+		 * driver.findElement(By.xpath("//*[@text='10,00,000']")).click();
+		 * 
+		 * scrollDown();
+		 * 
+		 * driver.findElement(By.xpath("//*[@text='Save']")).click();
+		 * Thread.sleep(2000);
+		 */
 	}
 	
 }

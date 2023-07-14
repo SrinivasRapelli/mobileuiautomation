@@ -5,7 +5,6 @@
     <classes>
       <class name="EriBankTest">
         <methods>
-          <include name="loginToEriBank"/>
           <include name="launchEriBank"/>
           <include name="makePayment"/>
         </methods>
