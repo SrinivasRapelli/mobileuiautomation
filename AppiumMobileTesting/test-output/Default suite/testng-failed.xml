@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="EriBankTest">
+      <class name="SwagLabsTest">
         <methods>
-          <include name="launchEriBank"/>
-          <include name="makePayment"/>
+          <include name="launchApp"/>
+          <include name="addToCart"/>
         </methods>
-      </class> <!-- EriBankTest -->
+      </class> <!-- SwagLabsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

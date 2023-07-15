@@ -14,7 +14,7 @@ public class BasePage {
  public 	static DesiredCapabilities  capabilities;
 	public static WebDriver driver;
 	
-  //@BeforeSuite
+   @BeforeSuite
 	public  void launchApp() throws MalformedURLException {
 			
 			capabilities = new DesiredCapabilities();
@@ -25,7 +25,7 @@ public class BasePage {
 			capabilities.setCapability ("appActivity", "com.swaglabsmobileapp.MainActivity") ;
 			capabilities.setCapability ("automationName", "uiautomator2");
 			capabilities.setCapability ("skipUnlock",	"true");
-			capabilities.setCapability ("noReTet","true");
+			capabilities.setCapability ("noReset","true");
 			capabilities.setCapability ("senserInstrument", true);
 			driver = new AndroidDriver (new URL ("http://127.0.0.1:4723/wd/hub"),	capabilities);
 					
@@ -47,7 +47,8 @@ public class BasePage {
 		driver = new AndroidDriver (new URL ("http://127.0.0.1:4723/wd/hub"),	capabilities);
 				
 }
-	@BeforeSuite
+	
+	//@BeforeSuite
 	public void launchEriBank() throws MalformedURLException {
 		capabilities = new DesiredCapabilities();
 		capabilities.setCapability("deviceName", "emulator-5554");

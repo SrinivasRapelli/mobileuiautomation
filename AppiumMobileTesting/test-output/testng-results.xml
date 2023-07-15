@@ -2,28 +2,28 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-14T14:03:52Z" name="Default suite" finished-at="2023-07-14T14:05:09Z" duration-ms="76393">
+  <suite started-at="2023-07-15T14:29:55Z" name="Default suite" finished-at="2023-07-15T14:30:38Z" duration-ms="42734">
     <groups>
     </groups>
-    <test started-at="2023-07-14T14:03:52Z" name="Default test" finished-at="2023-07-14T14:05:09Z" duration-ms="76393">
-      <class name="EriBankTest">
-        <test-method is-config="true" signature="launchEriBank()[pri:0, instance:EriBankTest@2f67b837]" started-at="2023-07-14T14:03:41Z" name="launchEriBank" finished-at="2023-07-14T14:03:52Z" duration-ms="11158" status="PASS">
+    <test started-at="2023-07-15T14:29:55Z" name="Default test" finished-at="2023-07-15T14:30:38Z" duration-ms="42734">
+      <class name="SwagLabsTest">
+        <test-method is-config="true" signature="launchApp()[pri:0, instance:SwagLabsTest@1869fbd2]" started-at="2023-07-15T14:29:41Z" name="launchApp" finished-at="2023-07-15T14:29:55Z" duration-ms="14438" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchEriBank -->
-        <test-method signature="loginToEriBank()[pri:0, instance:EriBankTest@2f67b837]" started-at="2023-07-14T14:03:52Z" name="loginToEriBank" finished-at="2023-07-14T14:04:03Z" duration-ms="10927" status="PASS">
+        </test-method> <!-- launchApp -->
+        <test-method signature="loginTest()[pri:0, instance:SwagLabsTest@1869fbd2]" started-at="2023-07-15T14:29:55Z" name="loginTest" finished-at="2023-07-15T14:30:05Z" duration-ms="9841" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginToEriBank -->
-        <test-method signature="makePayment()[pri:1, instance:EriBankTest@2f67b837]" started-at="2023-07-14T14:04:03Z" name="makePayment" finished-at="2023-07-14T14:04:22Z" duration-ms="19148" status="PASS">
+        </test-method> <!-- loginTest -->
+        <test-method signature="getProductNamesAndPrices()[pri:1, instance:SwagLabsTest@1869fbd2]" started-at="2023-07-15T14:30:05Z" name="getProductNamesAndPrices" finished-at="2023-07-15T14:30:23Z" duration-ms="17712" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- makePayment -->
-        <test-method signature="mortgageRequest()[pri:2, instance:EriBankTest@2f67b837]" started-at="2023-07-14T14:04:22Z" name="mortgageRequest" finished-at="2023-07-14T14:05:09Z" duration-ms="46300" status="PASS">
+        </test-method> <!-- getProductNamesAndPrices -->
+        <test-method signature="addToCart()[pri:2, instance:SwagLabsTest@1869fbd2]" started-at="2023-07-15T14:30:23Z" name="addToCart" finished-at="2023-07-15T14:30:38Z" duration-ms="15144" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- mortgageRequest -->
-      </class> <!-- EriBankTest -->
+        </test-method> <!-- addToCart -->
+      </class> <!-- SwagLabsTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
