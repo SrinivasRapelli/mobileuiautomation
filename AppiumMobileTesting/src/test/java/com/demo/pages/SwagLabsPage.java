@@ -34,10 +34,17 @@ public class SwagLabsPage {
     By remove = By.xpath("//*[@text='REMOVE']");
     By cart = By.xpath("//*[@content-desc=\"test-Cart\"]");
     By itemMsg = By.xpath("//*[@text='Sauce Labs Bolt T-Shirt']");
-    
-	
-	
-	
+   
+    By checkOutbutton = By.xpath("//*[@text='CHECKOUT']");
+    By firstName=By.xpath("//*[@text='First Name']");
+    By lastName= By.xpath("//*[@text='Last Name']");
+    By pinCode = By.xpath("//*[@text='Zip/Postal Code']");
+	By continueButton = By.xpath("//*[@text='CONTINUE']");
+	By priceCheck = By.xpath("//*[@text='Total: $17.27']");
+	By finish = By.xpath("//*[@text='FINISH']");
+	By thankYouMsg =  By.xpath("//*[@text='THANK YOU FOR YOU ORDER']");
+	By backhomeButton = By.xpath("//*[@text='BACK HOME']");
+	By products = By.xpath("");
 	
 	public void enterUsername() {
         driver.findElement(username).sendKeys("standard_user");;
@@ -134,11 +141,49 @@ public class SwagLabsPage {
 		System.out.println(msg);
 		Assert.assertEquals(msg, "Sauce Labs Bolt T-Shirt");
 	}
+
+    public void clickOnCheckOutbutton() {
+    	driver.findElement(checkOutbutton).click();
+    }
+   
+    public void enterFirstName() {
+    	driver.findElement(firstName).sendKeys("Srinivas");
+    }
+
+	public void enterLastName() {
+		driver.findElement(lastName).sendKeys("Rapelli");
+		    
+	}
+
+	public void enterPinCode() {
+		driver.findElement(pinCode).sendKeys("506356");
+		   
+	}
+
+	public void clickOnContinueButton() {
+
+		driver.findElement(continueButton).click();
+	}
+
+	public void checkThePrice() {
+       String price = driver.findElement(priceCheck).getText();
+       Assert.assertEquals(price, "Total: $17.27");
+       System.out.println(price);
+	}
+
+	public void clickOnFinshButton() {
+       driver.findElement(finish).click();
+	}
+
+	public void checkthankYouMsg() {
+		String tqMsg = driver.findElement(thankYouMsg).getText();
+		System.out.println(tqMsg);
+		Assert.assertEquals(tqMsg, "THANK YOU FOR YOU ORDER");
+	}
 	
-	
-	
-	
-	
+	public void clickOnBackToHomeButton() {
+		driver.findElement(backhomeButton).click();
+	}
 	
 	
 	

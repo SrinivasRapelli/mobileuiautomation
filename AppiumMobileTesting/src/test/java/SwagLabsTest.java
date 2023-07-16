@@ -15,6 +15,7 @@ import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
@@ -58,33 +59,35 @@ public class SwagLabsTest extends BasePage {
 
 		}
 	}
+	public void scrollDown1() {
+		Dimension screenSize = driver.manage().window().getSize();
+
+		// Define the start and end coordinates for the swipe action
+		int startX = screenSize.getWidth() / 2;
+		int startY = (int) (screenSize.getHeight() * 0.8);
+		int endX = startX;
+		int endY = (int) (screenSize.getHeight() * 0.2);
+
+		// Perform the swipe action
+		TouchAction touchAction = new TouchAction((PerformsTouchActions)driver);
+		touchAction.press(PointOption.point(startX, startY))
+		        .waitAction()
+		        .moveTo(PointOption.point(endX, endY))
+		        .release()
+		        .perform();
+			
+	}
+	
 
 	@Test(priority = 1)
 	public void getProductNamesAndPrices() throws InterruptedException {
 		 Thread.sleep(5000);
 		 swageLabs.printNamesandPricesOfTheProducts();
-		 
-		/*
-		 * List<WebElement> names =
-		 * driver.findElements(By.xpath("//*[@content-desc=\"test-Item title\"][1]"));
-		 * List<WebElement> prices =
-		 * driver.findElements(By.xpath("//*[@content-desc=\"test-Price\"]"));
-		 * 
-		 * for (WebElement webElement : names) {
-		 * System.out.println(webElement.getText()); }
-		 * 
-		 * for (int i = 0; i < 5; i++) { System.out.println(prices.get(i).getText());
-		 * scrollDown();
-		 * 
-		 * }
-		 */
-
+		  Thread.sleep(3000);
 	}
 
    @Test(priority = 2)
 	public void addToCart() throws InterruptedException {
-	   
-	   Thread.sleep(3000);
 	   swageLabs.clickOnAddToCart();
 	   Thread.sleep(2000);
 	   swageLabs.verifyRemoveMsg();
@@ -93,31 +96,30 @@ public class SwagLabsTest extends BasePage {
 	   Thread.sleep(3000);
 	   swageLabs.verifyTheItemAddedToTheCart();
 	   Thread.sleep(3000);
-	  
-
-		/*
-		 * driver.findElement(By.xpath("//*[@content-desc=\"test-ADD TO CART\"][1]")).
-		 * click(); Thread.sleep(2000); String remove =
-		 * driver.findElement(By.xpath("//*[@content-desc=\"test-REMOVE\"]")).
-		 * getAttribute("text"); System.out.println(remove); //
-		 * Assert.assertEquals(remove, "REMOVE");
-		 * driver.findElement(By.xpath("//*[@content-desc=\"test-Cart\"]")).click();
-		 * Thread.sleep(3000); String item = driver.findElement(By.xpath(
-		 * "//*[@content-desc=\"test-Description\"]/android.widget.TextView[1]")).
-		 * getText(); System.out.println(item); Assert.assertEquals(item,
-		 * "Sauce Labs Backpack");
-		 */
-		
-		
+	   swageLabs.clickOnCheckOutbutton();
+	   Thread.sleep(3000);
+	   swageLabs.enterFirstName();
+	   swageLabs.enterLastName();
+	   swageLabs.enterPinCode();
+	   scrollDown();
+	   swageLabs.clickOnContinueButton();
+	   Thread.sleep(3000);
+	   swageLabs.checkThePrice();
+	   scrollDown1();
+	   swageLabs.clickOnFinshButton();
+	   Thread.sleep(3000);
+	   swageLabs.checkthankYouMsg();
+	   swageLabs.clickOnBackToHomeButton();
+	   Thread.sleep(3000);
 	}
 	
-	//@Test(priority = 1)
+	@Test(priority = 3)
 	public void addMultipleItemsToCart() throws InterruptedException {
 		driver.findElement(By.xpath("//*[@content-desc=\"test-Toggle\"]")).click();
 		Thread.sleep(3000);
 		List<WebElement> multipleItems = driver.findElements(By.xpath("//*[@content-desc=\"test-ADD TO CART\"]"));
 		
-		for (int i =0; i<multipleItems.size();i++) {
+		for (int i =0; i<multipleItems.size(); i++) {
 			multipleItems.get(i).click();
 			
 			Thread.sleep(2000);
