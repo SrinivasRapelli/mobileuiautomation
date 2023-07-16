@@ -56,7 +56,7 @@ public class SwagLabsTest extends BasePage {
 			WaitOptions waitOption = WaitOptions.waitOptions(Duration.ofMillis(500));
 			touchAction.press(pointStart).waitAction(waitOption).moveTo(pointEnd).release().perform();
 		} catch (Exception e) {
-
+             e.getMessage();
 		}
 	}
 	public void scrollDown1() {
